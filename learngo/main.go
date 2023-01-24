@@ -2,19 +2,12 @@ package main
 
 import (
 	"fmt"
-	"log"
 
-	"github.com/hoondal6970/learngo/banking"
+	"github.com/hoondal6970/learngo/mydict"
 )
 
 func main() {
-	account := banking.NewAccount("solda")
-	account.Deposit(100)
-	fmt.Println(account.Balance())
-	err := account.Withdraw(120)
-	if err != nil {
-		log.Fatalln(err)
-	}
-
-	fmt.Println(account.Balance(), account.Owner())
+	dictionary := mydict.Dictionary{}
+	dictionary["hello"] = "Hello"
+	fmt.Println(dictionary)
 }
