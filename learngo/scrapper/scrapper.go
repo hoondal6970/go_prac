@@ -89,7 +89,8 @@ func extractJob(card *goquery.Selection, c chan<- extractedJob) {
 	c <- extractedJob{title: title, location: location, work: work}
 }
 
-func cleanString(str string) string {
+// CleanString cleans the string
+func CleanString(str string) string {
 	return strings.Join(strings.Fields(strings.TrimSpace(str)), " ")
 }
 
