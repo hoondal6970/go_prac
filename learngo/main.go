@@ -3,15 +3,17 @@ package main
 import (
 	"fmt"
 
-	"github.com/hoondal6970/learngo/mydict"
+	"github.com/hoondal6970/learngo/learngo/mydict"
 )
 
 func main() {
-	dictionary := mydict.Dictionary{"first": "First word"}
-	definition, err := dictionary.Search("second")
-	if err != nil {
-		fmt.Println(err)
-	} else {
-		fmt.Println(definition)
-	}
+	dictionary := mydict.Dictionary{}
+	word := "hello"
+	definition := "Greetings"
+	dictionary.Add(word, definition)
+	dictionary.Update(word, "modified")
+	dictionary.Delete(word)
+	found, err := dictionary.Search(word)
+	fmt.Println(found, err)
+
 }
